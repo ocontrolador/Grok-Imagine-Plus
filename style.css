@@ -49,21 +49,24 @@
   font-size: 12px;
 }
 
+
+
 /* ✨ hover effect */
 .prompt-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   background-color: color-mix(in srgb, var(--btn) 80%, var(--blue));
+  cursor: pointer;
 }
 
-/* selected ยังชัดกว่า hover */
-.prompt-item.selected {
+/* selected Still clearer hover */
+/* .prompt-item.selected {
   outline: 2px solid var(--blue);
   box-shadow: 0 0 0 1px var(--blue);
-}
+} */
 
 /* 🔍 hover preview */
-.prompt-item::before {
+/* .prompt-item::before {
   content: attr(data-full-text);
   position: absolute;
   left: 50%;
@@ -87,12 +90,12 @@
 
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: opacity 0.15s ease, transform 0.15s ease;
-}
+} */
 
-.prompt-item:hover::before {
+/* .prompt-item:hover::before {
   opacity: 1;
   transform: translateX(-50%) translateY(-2px);
-}
+} */
 
 
 /* ✏️ hint text (Edit) */
@@ -115,10 +118,10 @@
   opacity: 0.7;
 } */
 
-.prompt-item:active {
+/* .prompt-item:active {
   cursor: grabbing;
   transform: scale(0.98);
-}
+} */
 
 .grok-modal-backdrop {
   position: fixed;

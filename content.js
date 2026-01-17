@@ -1,5 +1,7 @@
 /**
- * Grok Imagine Plus 1.5.8
+ * Grok Imagine Plus 
+ * Extensão para melhorar a experiência no Grok Imagine
+ * Autor: Diaslasd
  * Inspirado em: Grok Imagine Prompt Manager
  * Desenvolvido em colaboração com Gemini AI (Google)
  */
@@ -28,6 +30,9 @@ const DEFAULT_PROMPTS = [
 
   let ORIG_WIDTH = 1;
   let ORIG_HEIGHT = 1;
+
+  let ultimaUrl = location.href;
+
 
   // ----------------------------
   // Configurações e Persistência
@@ -80,6 +85,18 @@ const DEFAULT_PROMPTS = [
       });
     }
   }
+   
+  // Ativa controles em todos os vídeos em Favoreite
+  function controlsAllVideos() {
+    const urlAtual = window.location.href;    
+    
+    if (urlAtual === "https://grok.com/imagine/favorites") {
+    document.querySelectorAll("video").forEach((v) => {
+      v.setAttribute("controls", "true");
+      v.style.pointerEvents = "auto";
+    });
+    }
+  }
 
   function toggleFullScreen() {
     const video = document.querySelector('video[style*="visible"]');
@@ -97,7 +114,7 @@ const DEFAULT_PROMPTS = [
     );
     const display = document.querySelector("#w-display");
 
-    if (ORIG_WIDTH === 1 && container) {
+    if (ORIG_WIDTH <= 1 && container) {
       ORIG_WIDTH = container.clientWidth;
       ORIG_HEIGHT = container.clientHeight;
       currentWidth = ORIG_WIDTH + 50;
@@ -128,7 +145,7 @@ const DEFAULT_PROMPTS = [
       chrome.storage.local.set({ [VIDEO_CTRL_KEY]: false }, applyVideoSettings);
     }
     applyZoom(1);
-    if (ORIG_WIDTH !== 1) {
+    if (ORIG_WIDTH > 1) {
       updateWidth(ORIG_WIDTH);
     }
   }
@@ -247,7 +264,7 @@ const DEFAULT_PROMPTS = [
     root.append(toolbar, list);
     hr.insertAdjacentElement("afterend", root);
     render(list);
-    applyVideoSettings();
+    //applyVideoSettings();
   }
 
   function createBtn(text, onclick, title = "") {
@@ -286,6 +303,7 @@ const DEFAULT_PROMPTS = [
     prompts.forEach((p) => {
       const item = document.createElement("div");
       item.className = "prompt-item";
+      item.title = p.text;
       item.innerHTML = `<span class="prompt-text">${p.text.slice(0, 15)}...</span>`;
       const del = document.createElement("span");
       del.className = "prompt-delete";
@@ -377,23 +395,21 @@ const DEFAULT_PROMPTS = [
 
   load();
   setInterval(() => {
-    if (location.href.includes("/imagine")) createManager();
-  }, 1000);
-  setInterval(() => {
-    container = document.querySelector(
-      "div.group.relative.mx-auto.rounded-2xl.overflow-hidden",
-    );    
-    if (ORIG_WIDTH === 1 && container) {
+    if (location.href.includes("/imagine/post")) {
+    createManager();
+    container = document.querySelector("div.group.relative.mx-auto.rounded-2xl.overflow-hidden",);    
+    const display = document.querySelector("#w-display");
+    if (ORIG_WIDTH <= 1 && container) {
       ORIG_WIDTH = container.clientWidth;
       ORIG_HEIGHT = container.clientHeight;
       currentWidth = ORIG_WIDTH;
-    }  
-    const display = document.querySelector("#w-display");
-    if (display) display.textContent = `${currentWidth}px`;  
+      if (display) display.textContent = `${currentWidth}px`;  
+    }
+  }    
   }, 2000);
   const observer = new MutationObserver(() => {
-    createManager();
-    applyVideoSettings();
+    controlsAllVideos();
+    if (location.href !== ultimaUrl) ORIG_WIDTH = 1; 
   });
   observer.observe(document.body, { childList: true, subtree: true });
 })();
