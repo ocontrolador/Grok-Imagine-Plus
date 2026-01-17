@@ -1,0 +1,271 @@
+:root {
+  --bg: #fafafa;
+  --border: #ddd;
+  --text: #111;
+  --btn: #eaeaea;
+  --blue: #007bff;
+}
+
+/* 🌙 Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --border: #333;
+    --text: #eee;
+    --btn: #2a2a2a;
+    --blue: #4da3ff;
+  }
+}
+
+#grok-prompt-manager {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 2px;
+  margin-top: 0px;
+  border-radius: 16px;
+}
+
+#grok-prompt-manager button {
+  background: var(--btn);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.prompt-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.prompt-item {
+  background: var(--btn);
+  border-radius: 999px; /* pill */
+  padding: 6px 14px;
+  font-size: 12px;
+}
+
+/* ✨ hover effect */
+.prompt-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: color-mix(in srgb, var(--btn) 80%, var(--blue));
+}
+
+/* selected ยังชัดกว่า hover */
+.prompt-item.selected {
+  outline: 2px solid var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+/* 🔍 hover preview */
+.prompt-item::before {
+  content: attr(data-full-text);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  max-width: 360px;
+
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.prompt-item:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+
+/* ✏️ hint text (Edit) */
+/* .prompt-item::after {
+  content: "✏ Double click to edit";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  color: var(--text);
+  transition: opacity 0.15s ease;
+} */
+
+/* show hint on hover */
+/* .prompt-item:hover::after {
+  opacity: 0.7;
+} */
+
+.prompt-item:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.grok-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+
+.grok-modal {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grok-modal textarea {
+  width: 100%;
+  height: 120px;
+}
+
+.prompt-item {
+  position: relative;
+}
+
+.prompt-delete {
+  top: 2px;
+  right: 8px;
+  font-size: 11px;
+  padding-left: 3px;
+  cursor: pointer;
+}
+
+.prompt-item:hover .prompt-delete {
+  opacity: 0.8;
+}
+
+.prompt-delete:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.prompt-toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 2px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 90%, var(--blue));
+  border-radius: 12px;
+}
+
+.prompt-toolbar button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.prompt-toolbar button:hover {
+  background: var(--btn);
+}
+
+.mode-btn {
+  font-weight: bold;
+  border-color: var(--blue);
+}
+
+/* Modal action area */
+.modal-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Base button */
+.btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 13px;
+  transition: 
+    background-color 0.15s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+/* Secondary (Cancel) */
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--btn);
+}
+
+/* Primary (Submit) */
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+/* Pressed effect */
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+}
+
+/* Adicione ou ajuste no seu style.css */
+
+.prompt-toolbar {
+  flex-wrap: wrap; /* Permite que os botões quebrem linha se necessário */
+  gap: 4px;
+  padding: 5px;
+}
+
+.prompt-toolbar button {
+  font-weight: 500;
+  border-radius: 6px;
+  background: var(--btn);
+  transition: all 0.2s;
+}
+
+.prompt-toolbar button:active {
+  background: var(--blue);
+  color: white;
+}
+
+/* Garante que o Zoom não saia do container arredondado */
+.group.relative.mx-auto.rounded-2xl {
+  overflow: hidden !important; 
+}
+
+video, img {
+  transition: transform 0.2s ease-in-out;
+}
