@@ -269,3 +269,14 @@
 video, img {
   transition: transform 0.2s ease-in-out;
 }
+
+/* Estilo para ocultar a lista */
+.prompt-list.collapsed {
+  display: none !important;
+}
+
+/* Ajuste no botão de toggle para feedback visual */
+.toggle-list-btn {
+  font-weight: bold;
+  min-width: 24px;
+}
