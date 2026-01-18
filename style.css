@@ -59,69 +59,24 @@
   cursor: pointer;
 }
 
-/* selected Still clearer hover */
-/* .prompt-item.selected {
-  outline: 2px solid var(--blue);
-  box-shadow: 0 0 0 1px var(--blue);
-} */
+.prompt-edit {
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
 
-/* 🔍 hover preview */
-/* .prompt-item::before {
-  content: attr(data-full-text);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 8px);
-  transform: translateX(-50%);
-  max-width: 360px;
-
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 10px;
-
-  font-size: 12px;
-  line-height: 1.4;
-  white-space: pre-wrap;
-
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-} */
-
-/* .prompt-item:hover::before {
+.prompt-edit:hover {
   opacity: 1;
-  transform: translateX(-50%) translateY(-2px);
-} */
+  transform: scale(1.2);
+}
 
-
-/* ✏️ hint text (Edit) */
-/* .prompt-item::after {
-  content: "✏ Double click to edit";
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  color: var(--text);
-  transition: opacity 0.15s ease;
-} */
-
-/* show hint on hover */
-/* .prompt-item:hover::after {
-  opacity: 0.7;
-} */
-
-/* .prompt-item:active {
-  cursor: grabbing;
-  transform: scale(0.98);
-} */
+/* Ajuste no container para alinhar os ícones */
+.prompt-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 .grok-modal-backdrop {
   position: fixed;

@@ -1,5 +1,5 @@
 /**
- * Grok Imagine Plus 
+ * Grok Imagine Plus
  * Extensão para melhorar a experiência no Grok Imagine
  * Autor: Diaslasd
  * Inspirado em: Grok Imagine Prompt Manager
@@ -32,7 +32,6 @@ const DEFAULT_PROMPTS = [
   let ORIG_HEIGHT = 1;
 
   let ultimaUrl = location.href;
-
 
   // ----------------------------
   // Configurações e Persistência
@@ -85,16 +84,16 @@ const DEFAULT_PROMPTS = [
       });
     }
   }
-   
+
   // Ativa controles em todos os vídeos em Favoreite
   function controlsAllVideos() {
-    const urlAtual = window.location.href;    
-    
+    const urlAtual = window.location.href;
+
     if (urlAtual === "https://grok.com/imagine/favorites") {
-    document.querySelectorAll("video").forEach((v) => {
-      v.setAttribute("controls", "true");
-      v.style.pointerEvents = "auto";
-    });
+      document.querySelectorAll("video").forEach((v) => {
+        v.setAttribute("controls", "true");
+        v.style.pointerEvents = "auto";
+      });
     }
   }
 
@@ -207,8 +206,8 @@ const DEFAULT_PROMPTS = [
       "Toggle Video Controls",
     );
 
-    const fsBtn = createBtn("◻", toggleFullScreen, "Fullscreen");
-    fsBtn.title = "Tela Cheia";
+    const fsBtn = createBtn("🖵", toggleFullScreen, "Fullscreen");
+    fsBtn.title = "Full Screen"; // 🖵 ⛶
 
     // Stepper de Largura (W)
     const wControl = createStepper(
@@ -304,7 +303,19 @@ const DEFAULT_PROMPTS = [
       const item = document.createElement("div");
       item.className = "prompt-item";
       item.title = p.text;
-      item.innerHTML = `<span class="prompt-text">${p.text.slice(0, 15)}...</span>`;
+      item.innerHTML = (p.text.length > 15 ? `<span class="prompt-text">${p.text.slice(0, 15)}...</span>` : `<span class="prompt-text">${p.text}</span>`);
+
+      // Botão Editar
+      const edit = document.createElement("span");
+      edit.className = "prompt-edit";
+      edit.textContent = "✏️";
+      edit.style.marginRight = "5px";
+      edit.onclick = (e) => {
+        e.stopPropagation();
+        openModal(p); // Passamos o prompt atual para editar
+      };
+
+      // Botão Deletar
       const del = document.createElement("span");
       del.className = "prompt-delete";
       del.textContent = "❌";
@@ -317,6 +328,7 @@ const DEFAULT_PROMPTS = [
           render(list);
         }
       };
+
       item.onclick = () => {
         const input = findImagineInput();
         if (input) {
@@ -330,37 +342,50 @@ const DEFAULT_PROMPTS = [
           input.dispatchEvent(new Event("input", { bubbles: true }));
         }
       };
+
+      item.appendChild(edit);
       item.appendChild(del);
       list.appendChild(item);
     });
   }
 
-  function openModal() {
-    const backdrop = document.createElement("div");
-    backdrop.className = "grok-modal-backdrop";
-    backdrop.innerHTML = `
-      <div class="grok-modal">
-        <h3>Add Prompt</h3>
-        <textarea style="width:100%; height:100px; background:#222; color:white; border:1px solid #444"></textarea>
-        <div style="display:flex; justify-content:flex-end; gap:5px; margin-top:10px">
-          <button id="close-modal">Cancel</button>
-          <button id="save-modal" style="background:#4da3ff; color:white">Save</button>
-        </div>
+  function openModal(existingPrompt = null) {
+  const backdrop = document.createElement("div");
+  backdrop.className = "grok-modal-backdrop";
+  backdrop.innerHTML = `
+    <div class="grok-modal">
+      <h3>${existingPrompt ? "Edit Prompt" : "Add Prompt"}</h3>
+      <textarea style="width:100%; height:100px; background:#222; color:white; border:1px solid #444">${existingPrompt ? existingPrompt.text : ""}</textarea>
+      <div style="display:flex; justify-content:flex-end; gap:5px; margin-top:10px">
+        <button id="close-modal">Cancel</button>
+        <button id="save-modal" style="background:#4da3ff; color:white">Save</button>
       </div>
-    `;
-    document.body.appendChild(backdrop);
-    backdrop.querySelector("#close-modal").onclick = () => backdrop.remove();
-    backdrop.querySelector("#save-modal").onclick = () => {
-      const val = backdrop.querySelector("textarea").value.trim();
-      if (val) {
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+  
+  const textarea = backdrop.querySelector("textarea");
+  textarea.focus();
+
+  backdrop.querySelector("#close-modal").onclick = () => backdrop.remove();
+  backdrop.querySelector("#save-modal").onclick = () => {
+    const val = textarea.value.trim();
+    if (val) {
+      if (existingPrompt) {
+        // Atualiza o texto do prompt existente
+        const index = prompts.findIndex(x => x.id === existingPrompt.id);
+        if (index !== -1) prompts[index].text = val;
+      } else {
+        // Cria um novo
         prompts.push({ id: Math.random().toString(36).slice(2), text: val });
-        save();
-        updatePromptCount();
-        render(document.querySelector(".prompt-list"));
       }
-      backdrop.remove();
-    };
-  }
+      save();
+      updatePromptCount();
+      render(document.querySelector(".prompt-list"));
+    }
+    backdrop.remove();
+  };
+}
 
   function exportJSON() {
     const blob = new Blob([JSON.stringify(prompts, null, 2)], {
@@ -396,20 +421,22 @@ const DEFAULT_PROMPTS = [
   load();
   setInterval(() => {
     if (location.href.includes("/imagine/post")) {
-    createManager();
-    container = document.querySelector("div.group.relative.mx-auto.rounded-2xl.overflow-hidden",);    
-    const display = document.querySelector("#w-display");
-    if (ORIG_WIDTH <= 1 && container) {
-      ORIG_WIDTH = container.clientWidth;
-      ORIG_HEIGHT = container.clientHeight;
-      currentWidth = ORIG_WIDTH;
-      if (display) display.textContent = `${currentWidth}px`;  
+      createManager();
+      container = document.querySelector(
+        "div.group.relative.mx-auto.rounded-2xl.overflow-hidden",
+      );
+      const display = document.querySelector("#w-display");
+      if (ORIG_WIDTH <= 1 && container) {
+        ORIG_WIDTH = container.clientWidth;
+        ORIG_HEIGHT = container.clientHeight;
+        currentWidth = ORIG_WIDTH;
+        if (display) display.textContent = `${currentWidth}px`;
+      }
     }
-  }    
   }, 2000);
   const observer = new MutationObserver(() => {
     controlsAllVideos();
-    if (location.href !== ultimaUrl) ORIG_WIDTH = 1; 
+    if (location.href !== ultimaUrl) ORIG_WIDTH = 1;
   });
   observer.observe(document.body, { childList: true, subtree: true });
 })();
