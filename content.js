@@ -10,7 +10,7 @@ const DEFAULT_PROMPTS = [
 ];
 
 const FIXED_PROMPTS = [
-  { id: "⚡", text: "[Ultra]" },
+  { id: "⚡", text: "[Ultra Mode]" },
   { id: "🌸", text: "[Anime Mode]" },
   { id: "🎉", text: "[Fun Mode]" },
   { id: "🔥", text: "[Spicy Mode]" },
@@ -23,8 +23,8 @@ const FIXED_PROMPTS = [
   { id: "🔜", text: "Front view." },
   { id: "👀", text: "Looking at Viewer." },
   { id: "😈", text: "Hypersexualized character in an explicit pose." },
-  { id: "📸", text: "Transform this image into an extreme photorealistic capture..." },
-  { id: "🥰", text: "Transform this image into super kawaii chibi anime style..." }
+  { id: "📸", text: "Transform this image into an extreme photorealistic capture of a real person, hyper-detailed live-action movie still, actual real human captured on professional cinema camera like ARRI Alexa 65, authentic 35mm film grain Kodak Vision3 stock, natural human skin with visible pores, subtle imperfections, freckles, fine wrinkles, realistic subsurface scattering, natural sweat and oil sheen, razor-sharp focus on eyes with detailed iris and catchlights, shallow depth of field 85mm prime lens cinematic bokeh, dramatic volumetric lighting motivated by practical sources, raw unfiltered photograph straight out of a Hollywood blockbuster, 8K ultra-high resolution, insane micro-details on hair strands fabrics skin texture, casual imperfect framing slight lens distortion natural exposure, no cartoon no illustration no render no plastic skin no airbrushed no idealized smooth perfection, pure optical realism as if taken with a real lens in the real world." },
+  { id: "🥰", text: "Transform this image into super kawaii chibi anime style, cute hand-drawn 2D cartoon illustration, big sparkling expressive anime eyes, huge head tiny body exaggerated proportions, vibrant cel-shading flat colors clean bold lineart, playful whimsical Studio Ghibli mixed with modern cute anime like Spy x Family or K-On, soft pastel palette glowing highlights sparkles, adorable deformed chibi character design, detailed manga-style facial expression energetic pose, no photorealism no realistic skin no pores no 3D render no live-action no human photo texture no cinematic grain, pure 2D animated screencap colorful flat shading ink outlines watercolor accents low detail stylized cute art." }
 ];
 
 (() => {
@@ -183,6 +183,7 @@ const FIXED_PROMPTS = [
 
     backdrop.querySelector("#close-modal").onclick = () => backdrop.remove();
     backdrop.querySelector("#save-modal").onclick = () => {
+      document.querySelector(".prompt-list").classList.remove("collapsed"); // Expand list on save
       const val = textarea.value.trim();
       if (val) {
         if (isEditing) {
@@ -254,23 +255,59 @@ const FIXED_PROMPTS = [
       chrome.storage.local.get([VIDEO_CTRL_KEY], (res) => {
         const enabled = !!res[VIDEO_CTRL_KEY];
         document.querySelectorAll("video").forEach((v) => {
-          v.setAttribute("controls", enabled ? "true" : "false");
-          v.style.pointerEvents = enabled ? "auto" : "none";
+          const container = v.closest(".group.relative.mx-auto");
+          if (enabled) {
+            v.setAttribute("controls", "true");
+            v.style.pointerEvents = "auto";
+            if (container) {
+              container.querySelectorAll("div.absolute").forEach((d) => {
+                if (!d.querySelector('button[aria-label="Mais opções"]')) {
+                  d.style.setProperty("display", "none", "important");
+                }
+              });
+            }
+          } else {
+            v.removeAttribute("controls");
+            if (container)
+              container
+                .querySelectorAll("div.absolute")
+                .forEach((d) => (d.style.display = ""));
+          }
         });
       });
     }
   }
 
+  // Ativa controles em todos os vídeos em Favoreite
   function controlsAllVideos() {
-    if (window.location.href.includes("/imagine/favorites")) {
-      document.querySelectorAll("video").forEach(v => v.setAttribute("controls", "true"));
+    const urlAtual = window.location.href;
+
+    if (urlAtual === "https://grok.com/imagine/favorites") {
+      document.querySelectorAll("video").forEach((v) => {
+        v.setAttribute("controls", "true");
+        v.style.pointerEvents = "auto";
+        v.style.objectFit = "contain";
+      });
     }
   }
 
   function toggleFullScreen() {
-    const video = document.querySelector('video[style*="visible"]');
-    if (video) video.requestFullscreen?.() || video.webkitRequestFullscreen?.();
+  const video = document.querySelector('video[style*="visible"]');
+  if (video) {
+    // Garante que o vídeo se ajuste à tela sem cortes antes de entrar em fullscreen
+    video.style.objectFit = "contain";
+    
+    // Tenta abrir em tela cheia
+    const promise = video.requestFullscreen?.() || video.webkitRequestFullscreen?.();
+    
+    // Opcional: Monitora a saída do fullscreen para restaurar o comportamento padrão da UI
+    video.onfullscreenchange = () => {
+      if (!document.fullscreenElement) {
+        video.style.objectFit = ""; // Restaura o CSS original ao sair
+      }
+    };
   }
+}
 
   function updateWidth(widthPx) {
     currentWidth = parseInt(widthPx);
@@ -317,6 +354,7 @@ const FIXED_PROMPTS = [
       }
     } else {
       ORIG_WIDTH = 1;
+      controlsAllVideos();  
     }
   }, 2000);
   const observer = new MutationObserver(() => {

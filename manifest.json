@@ -1,7 +1,7 @@
 {
    "manifest_version": 3,
    "name": "Grok Imagine Plus",
-   "version": "1.8.2",
+   "version": "1.8.5",
    "permissions": ["storage"],
    "content_scripts": [ {
       "css": [ "style.css" ],
