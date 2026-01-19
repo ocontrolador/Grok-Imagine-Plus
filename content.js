@@ -1,5 +1,5 @@
 /**
- * Grok Imagine Plus
+ * Grok Imagine Plus 
  * Extensão para melhorar a experiência no Grok Imagine
  * Autor: Diaslasd
  * Inspirado em: Grok Imagine Prompt Manager
@@ -178,7 +178,7 @@ const DEFAULT_PROMPTS = [
     // Botões Principais
     const addBtn = createBtn(
       `+ Prompts (${prompts.length})`,
-      openModal,
+      () => openModal(),
       "Add Prompt",
     );
     addBtn.id = "main-add-btn";
@@ -349,43 +349,56 @@ const DEFAULT_PROMPTS = [
     });
   }
 
-  function openModal(existingPrompt = null) {
+
+function openModal(existingPrompt = null) {
   const backdrop = document.createElement("div");
   backdrop.className = "grok-modal-backdrop";
+  
+  // Verifica se existingPrompt é realmente um prompt (tem a propriedade text)
+  // e não um evento de clique do botão
+  const isEditing = existingPrompt && typeof existingPrompt.text === 'string';
+  const promptText = isEditing ? existingPrompt.text : "";
+
   backdrop.innerHTML = `
     <div class="grok-modal">
-      <h3>${existingPrompt ? "Edit Prompt" : "Add Prompt"}</h3>
-      <textarea style="width:100%; height:100px; background:#222; color:white; border:1px solid #444">${existingPrompt ? existingPrompt.text : ""}</textarea>
+      <h3>${isEditing ? "Editar Prompt" : "Adicionar Prompt"}</h3>
+      <textarea style="width:100%; height:100px; background:#222; color:white; border:1px solid #444; padding:8px; border-radius:8px;"></textarea>
       <div style="display:flex; justify-content:flex-end; gap:5px; margin-top:10px">
-        <button id="close-modal">Cancel</button>
-        <button id="save-modal" style="background:#4da3ff; color:white">Save</button>
+        <button id="close-modal">Cancelar</button>
+        <button id="save-modal" style="background:#4da3ff; color:white">Salvar</button>
       </div>
     </div>
   `;
   document.body.appendChild(backdrop);
   
   const textarea = backdrop.querySelector("textarea");
+  textarea.value = promptText;
   textarea.focus();
 
   backdrop.querySelector("#close-modal").onclick = () => backdrop.remove();
+  
   backdrop.querySelector("#save-modal").onclick = () => {
     const val = textarea.value.trim();
     if (val) {
-      if (existingPrompt) {
-        // Atualiza o texto do prompt existente
+      if (isEditing) {
         const index = prompts.findIndex(x => x.id === existingPrompt.id);
         if (index !== -1) prompts[index].text = val;
       } else {
-        // Cria um novo
         prompts.push({ id: Math.random().toString(36).slice(2), text: val });
       }
       save();
       updatePromptCount();
-      render(document.querySelector(".prompt-list"));
+      
+      const list = document.querySelector(".prompt-list");
+      if (list) {
+        list.classList.remove("collapsed"); // Expande para ver o novo prompt
+        render(list);
+      }
     }
     backdrop.remove();
   };
 }
+
 
   function exportJSON() {
     const blob = new Blob([JSON.stringify(prompts, null, 2)], {
