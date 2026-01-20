@@ -238,3 +238,70 @@ video, img {
   font-weight: bold;
   min-width: 24px;
 }
+
+#grok-modal-fix .btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+#grok-modal-fix input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+}
+
+/* Cores por Categoria para os botões fixos */
+
+#grok-prompt-manager button[data-cat="FIXED"] {
+    background-color: #4b0082; /* Indigo */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="CONTROLS"] {
+    background-color: #2f4f4f; /* Dark Slate Gray */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="POSICAO"] {
+    background-color: #1ba0c9; /* Sky Blue */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="SENSUAL"] {
+    background-color: #b22222; /* Firebrick (Vermelho) */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="ROUPA"],
+#grok-prompt-manager button[data-cat="ROUPA_INTIMA"] {
+    background-color: #c71585; /* Medium Violet Red */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="COSPLAY"] {
+    background-color: #006400; /* Dark Green */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="AESTHETICS"] {
+    background-color: #4682b4; /* Steel Blue */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="FITNESS"] {
+    background-color: #ff8c00; /* Dark Orange */
+    color: white;
+}
+
+#grok-prompt-manager button[data-cat="YOGA_TANTRA"] {
+    background-color: #9370db; /* Medium Purple */
+    color: white;
+}
+
+/* Efeito de hover para destacar a cor original */
+#grok-prompt-manager button[data-cat]:hover {
+    filter: brightness(1.3);
+    border-color: #fff;
+}

@@ -1,4 +1,4 @@
-# Grok Imagine Plus 🚀
+# ![](./icons/icon32.png) Grok Imagine Plus 
 
 **Grok Imagine Plus** é uma extensão para Google Chrome projetada para potencializar a criação e visualização de mídia no site [Grok.com](https://grok.com/imagine/post/). Esta ferramenta unifica um poderoso gerenciador de prompts com controles avançados de vídeo e manipulação dinâmica de interface.
 
@@ -19,6 +19,10 @@
 * **Ajuste de Largura (W)**: Altere a largura da mídia em blocos de 50px através dos botões `➕` e `➖`.
 * **Proporção Automática**: A altura é recalculada automaticamente com base na proporção real da mídia detectada em tempo real (Aspect Ratio).
 * **Reset Instantâneo**: O botão `🔄` retorna o zoom, os controles e as dimensões aos valores originais de fábrica.
+
+### ⚙️ Gestão de Categorias Fixas
+* **Personalização de Atalhos**: Agora é possível filtrar quais grupos de botões aparecem na interface (Básico, Roupa, Atleta, Extras) através do botão de configuração.
+* **Persistência**: Suas preferências são salvas no navegador, mantendo a interface organizada conforme seu uso.
 
 ## 🛠️ Instalação (Modo Desenvolvedor)
 
