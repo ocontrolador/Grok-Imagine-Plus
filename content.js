@@ -323,9 +323,9 @@ function openModalFix() {
   
   // Cria os checkboxes baseados nas SUAS chaves (FIXED, CONTROLS, POSICAO, etc)
   const optionsHtml = Object.keys(FIXED_PROMPTS).map(cat => `
-    <div style="margin: 10px 0; display: flex; align-items: center; gap: 10px; color: white;">
-      <input type="checkbox" id="cat-${cat}" ${enabledCategories.includes(cat) ? 'checked' : ''} value="${cat}" style="width:18px; height:18px; cursor:pointer;">
-      <label for="cat-${cat}" style="cursor:pointer; font-size:14px; user-select:none;">${cat}</label>
+    <div style="margin: 6px 0; display: flex; align-items: center; gap: 10px; color: white;">
+      <input type="checkbox" id="cat-${cat}" ${enabledCategories.includes(cat) ? 'checked' : ''} value="${cat}" style="width:32px; height:16px; cursor:pointer;">
+      <label for="cat-${cat}" data-cat="${cat}" style="cursor:pointer; padding: 0 5px; font-size:14px; user-select:none;">${cat}</label>
     </div>
   `).join('');
 

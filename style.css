@@ -254,54 +254,64 @@ video, img {
 
 /* Cores por Categoria para os botões fixos */
 
-#grok-prompt-manager button[data-cat="FIXED"] {
-    background-color: #4b0082; /* Indigo */
-    color: white;
+[data-cat="FIXED"] {
+    background-color: #4b0082 !important; /* Indigo */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="CONTROLS"] {
-    background-color: #2f4f4f; /* Dark Slate Gray */
-    color: white;
+[data-cat="CONTROLS"] {
+    background-color: #2f4f4f !important; /* Dark Slate Gray */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="POSICAO"] {
-    background-color: #1ba0c9; /* Sky Blue */
-    color: white;
+[data-cat="POSICAO"] {
+    background-color: #1ba0c9 !important;
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="SENSUAL"] {
-    background-color: #b22222; /* Firebrick (Vermelho) */
-    color: white;
+[data-cat="SENSUAL"] {
+    background-color: #b22222 !important; /* Firebrick (Vermelho) */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="ROUPA"],
-#grok-prompt-manager button[data-cat="ROUPA_INTIMA"] {
-    background-color: #c71585; /* Medium Violet Red */
-    color: white;
+[data-cat="ROUPA"],
+[data-cat="ROUPA_INTIMA"] {
+    background-color: #c71585 !important; /* Medium Violet Red */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="COSPLAY"] {
-    background-color: #006400; /* Dark Green */
-    color: white;
+[data-cat="COSPLAY"] {
+    background-color: #006400 !important; /* Dark Green */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="AESTHETICS"] {
-    background-color: #4682b4; /* Steel Blue */
-    color: white;
+[data-cat="AESTHETICS"] {
+    background-color: #4682b4 !important; /* Steel Blue */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="FITNESS"] {
-    background-color: #ff8c00; /* Dark Orange */
-    color: white;
+[data-cat="FITNESS"] {
+    background-color: #ff8c00 !important; /* Dark Orange */
+    color: white !important;
 }
 
-#grok-prompt-manager button[data-cat="YOGA_TANTRA"] {
-    background-color: #9370db; /* Medium Purple */
-    color: white;
+[data-cat="YOGA_TANTRA"] {
+    background-color: #9370db !important; /* Medium Purple */
+    color: white !important;
+}
+
+[data-cat="LUGAR"] {
+    background-color: #20b2aa !important; /* Light Sea Green */
+    color: white !important;
+}
+
+[data-cat="ROMANCE"] {
+    background-color: #ff69b4 !important; /* Hot Pink */
+    color: white !important;
 }
 
 /* Efeito de hover para destacar a cor original */
-#grok-prompt-manager button[data-cat]:hover {
-    filter: brightness(1.3);
-    border-color: #fff;
+[data-cat]:hover {
+    filter: brightness(1.3) !important;
+    border-color: #fff !important;
 }
