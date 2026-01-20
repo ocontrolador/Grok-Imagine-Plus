@@ -361,7 +361,7 @@ function openModalFix() {
     prompts.forEach((p) => {
       const item = document.createElement("div");
       item.className = "prompt-item";
-      item.innerHTML = `<span class="prompt-text" title="${p.text}">${p.text.length > 20 ? p.text.slice(0, 20) + "..." : p.text}</span>`;
+      item.innerHTML = `<span class="prompt-text" title="${p.text}">${p.text.length > 18 ? p.text.slice(0, 18) + "..." : p.text}</span>`;
       const edit = document.createElement("span");
       edit.className = "prompt-edit";
       edit.textContent = "✏️";
