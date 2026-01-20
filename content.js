@@ -10,6 +10,170 @@ const DEFAULT_PROMPTS = [
 ];
 
 const FIXED_PROMPTS = [
+  { id: "⚡", text:  "[Ultra Mode]" },
+  { id: "🌸", text: "[Anime Mode]" },
+  { id: "🎉", text: "[Fun Mode]" },
+  { id: "🔥", text: "[Spicy Mode]" },
+  { id: "⛓", text:  "[BDSM Mode]" },
+  { id: "🔞", text: "[NSFW Mode]" },
+  { id: "©", text:  "Remove all watermarks, signatures, Copyright, and texts." },
+  { id: "👥", text: "Remove other people." },
+  { id: "🖼️", text: "Remove background." },
+];
+
+// CATEGORIAS DE PROMPTS FIXOS
+
+// BASICO
+const DATA_CONTROLS = [
+  { id: "🔙", text: "Rear view." },
+  { id: "🔜", text: "Front view." },
+  { id: "👀", text: "Looking at Viewer." },
+  { id: "🔍+", text:"Zoom in." },
+  { id: "🔍-", text:"Zoom out." },
+  { id: "⏱️", text: "Slow Motion." },
+  { id: "🎦", text: "Cinematic portrait, soft lighting, 8k, highly detailed" },
+  { id: "📸", text: "Extreme photorealistic capture, ARRI Alexa 65 style, 35mm film grain, natural skin with pores, 8K ultra-high resolution, pure optical realism." },
+  { id: "🥰", text: "Super kawaii chibi anime style, cute 2D cartoon, big sparkling eyes, vibrant cel-shading, soft pastel palette." }
+];
+
+const DATA_POSICAO = [
+  { id: "🧎‍♀️", text: "Graceful pose on all fours, elegant arched back, looking back over shoulder." },
+  { id: "🔙", text: "Bent over, graceful back arch, arms reaching forward, emphasizing silhouette." },
+  { id: "🌙", text: "Side profile reclining, exaggerated S-curve from waist to hips, soft lighting." },
+  { id: "🫦", text:  "Hourglass silhouette from side view, emphasizing elegant hip lines and slim waist." },
+  { id: "🤸‍♀️", text: "Graceful gymnast in split leap pose, arched back, focused expression of bliss." },
+  { id: "🐍", text: "Cobra Pose, chest lifted sensually, back arched, head tilted back in ecstasy." }
+];
+
+const DATA_SENSUAL = [
+  { id: "🔥", text: "Enhances sensual lighting and feminine curves." },
+  { id: "🧎‍♀️", text: "Graceful pose on all fours, elegant arched back, looking back over shoulder." },
+  { id: "🍑", text: "Aesthetic focus on curves, firm and lifted silhouette, subtle skin sheen." },
+  { id: "🫦", text:  "Hourglass silhouette from side view, emphasizing waist and hip lines." },
+  { id: "🌙", text: "Side profile lying down, exaggerated S-curve of waist to hips, moonlit glow." },
+  { id: "👄", text: "Sensual expression, biting lower lip, focused on collarbones and cleavage." },
+  { id: "🛁", text: "Sensual woman in a bathtub overflowing with foam, steam rising, wet hair, soft candlelight." },
+  { id: "💦", text: "Hyper-detailed wet skin glistening with water droplets, post-shower glow, fresh and vibrant." },
+  { id: "🌊", text: "Golden hour beach scene, elegant bikini, sun-kissed oiled skin, waves lapping at feet." },
+  { id: "👗", text: "Provocative luxury lace lingerie, intricate patterns, sheer textures, boudoir atmosphere." },
+  { id: "🕯️", text: "Reclining on velvet sheets, chiaroscuro lighting, dramatic shadows, artistic oil painting vibe." },
+  { id: "🌹", text: "Lying amid red rose petals, soft morning light, romantic and passionate mood." },
+  { id: "😈", text: "Intense seductive expression, arched back, dramatic rim lighting, raw cinematic energy." }
+];
+
+// ROUPAS
+const DATA_ROUPA = [
+  { id: "👗", text: "Elegant form-fitting dress, high side slit revealing legs, plunging neckline, silk texture." },
+  { id: "🌊", text: "Stunning beach aesthetic, elegant bikini, sun-kissed oiled skin, wet hair look." },
+  { id: "🏊‍♀️", text: "Athletic one-piece swimsuit clinging wetly to curves, emerging from turquoise water." },
+  { id: "🏃‍♀️", text: "Sporty aesthetic, tiny running shorts and cropped top, sweat-glistened skin, dynamic energy." },
+  { id: "🌸", text: "Sheer flowing sarong, translucent fabric catching the wind, draped loosely over curves." }
+];
+
+const DATA_ROUPA_INTIMA = [
+  { id: "👙", text: "Luxurious lace lingerie set, intricate floral patterns, sheer textures, garter belt details." },
+  { id: "🎀", text: "Satin bodysuit with ribbons, plunging back, soft bedroom lighting, boudoir style." },
+  { id: "👠", text: "Complete boudoir look, sheer thigh-high stockings with lace tops, elegant high heels." },
+  { id: "🥀", text: "Dark silk robe partially open, revealing delicate lace underneath, intimate atmosphere." }
+];
+
+const DATA_COSPLAY = [
+  { id: "🦸‍♀️", text: "Female superhero, powerful pose, form-fitting spandex suit, flowing cape, city skyline." },
+  { id: "🧚‍♀️", text: "Enchanting fairy, iridescent wings, ethereal sheer dress of leaves and flowers, magical glade." },
+  { id: "🧛‍♀️", text: "Gothic vampire queen, lace corset, deep crimson lips, mysterious castle, moody red lighting." },
+  { id: "🖤", text: "Dominant aesthetic, glossy black latex catsuit, red neon accents, cyber-gothic atmosphere." },
+  { id: "🔗", text: "Artistic Shibari, delicate red silk ropes wrapped around curves, serene and vulnerable expression." },
+  { id: "🥷", text: "Seductive kunoichi (ninja) cosplay, form-fitting dark mesh armor, masked face with intense eyes, moonlight rooftop." },
+  { id: "⚔️", text: "Warrior Princess, ornate golden chestplate over sheer silk, holding a glowing sword, dramatic battlefield sunset." },
+  { id: "🛰️", text: "Galactic Pilot, unzipped futuristic flight suit, holographic interfaces reflecting on skin, starship cockpit." },
+  { id: "🐾", text: "Wild feline-inspired huntress, faux-fur accents, tribal markings, prowling pose in a jungle setting." },
+  { id: "🏛️", text: "Greek Goddess cosplay, translucent white chiton, gold leaf crown, leaning against marble pillars at twilight." }
+];
+
+// ATLETA
+const DATA_AESTHETICS = [
+  { id: "🏙", text: "Cyberpunk city street, neon lights, rainy night, realistic" },
+  { id: "😃", text: "Studio Ghibli style landscape, lush greenery, fluffy clouds" },
+  { id: "🌌", text: "Epic hard sci-fi, advanced futuristic technology, starships, 8K cinematic quality." },
+  { id: "🌃", text: "Ultra-detailed cyberpunk, neon-drenched rainy night, gritty dystopian atmosphere, 8K." },
+  { id: "🗡️", text: "High fantasy epic style, ancient castles, dragons, magical runes, cinematic atmosphere." },
+  { id: "🌀", text: "Surrealism art style, dream-like scene, melting clocks, Salvador Dalí influence, hypnotic mood." }
+];
+
+const DATA_FITNESS = [
+  { id: "🏋️‍♀️", text: "Athletic woman in gym pose, sports bra and high-cut shorts, defined muscles, sweat-glistened skin." },
+  { id: "🏃‍♀️", text: "Runner mid-sprint at golden hour, toned legs, wind-swept hair, dynamic motion blur." },
+  { id: "🤸‍♀️", text: "Gymnast in split leap pose, elegant bodysuit, soft studio lighting, focused expression." },
+  { id: "💪", text: "Female bodybuilder flexing, oiled skin under stage lights, powerful sensual strength, 8K." },
+  { id: "🧗‍♀️", text: "Rock climber on boulder wall, body stretched taut, back muscles defined, sunset cliff setting." },
+  { id: "🏊‍♀️", text: "Swimmer emerging from pool, water droplets on toned body, athletic swimsuit, blue water glow." },
+  { id: "🥊", text: "Female boxer in stance, sports gear, sweat flying, intense predatory gaze, dramatic ring lighting." }
+];
+
+// YOGA, TANTRA E ROMANCE
+const DATA_LUGAR = [
+  { id: "🛁", text: "Luxurious clawfoot bathtub, thick white foam bubbles, steam rising, warm candlelight." },
+  { id: "🛏️", text: "Luxurious bedroom, silk sheets, soft morning light through sheer curtains, intimate mood." },
+  { id: "🌿", text: "Enchanted tropical forest at dawn, soft mist, golden rays piercing through leaves." },
+  { id: "🕯️", text: "Dimly lit room, multiple candles, dramatic shadows (chiaroscuro), velvet textures." },
+  { id: "🌃", text: "Modern balcony overlooking a neon-drenched city at night, rainy atmosphere, blue glow." }
+];
+
+const DATA_YOGA_TANTRA = [
+  { id: "🕉️", text: "Sacred tantric connection, seated embrace, soul-gazing, golden energy aura, peaceful mood." },
+  { id: "🧘‍♀️", text: "Graceful yoga flow, Cat-Cow pose, arched back, golden hour sunlight, serene studio." },
+  { id: "🐍", text: "Cobra Pose (Bhujangasana), chest lifted, back arched gracefully, peaceful yet charged atmosphere." },
+  { id: "🕊️", text: "Pigeon Pose, deep hip-opening stretch, elegant torso, morning light, calm expression." },
+  { id: "🪷", text: "Sensual lotus meditation, bare torso with oil sheen, candlelight, inner bliss." },
+  { id: "💫", text: "Divine tantric harmony, bodies aligned in rhythm of breath, cosmic chakra glow, visionary art." }
+];
+
+const DATA_ROMANCE = [
+  { id: "💋", text: "Intimate close-up of a passionate kiss, soft lips pressed together, warm flushed cheeks." },
+  { id: "👩‍❤️‍💋‍👨", text: "Man and woman in close embrace, deep sensual kiss, candlelight, intimate loving connection." },
+  { id: "👩‍❤️‍👩", text: "Passionate lesbian couple, deep kiss, soft candlelight, intense longing and bliss." },
+  { id: "🫂", text: "Mixed couple embrace, skin-to-skin contact, sunset glow, profound love and desire." },
+  { id: "💞", text: "Two women in affectionate embrace, looking into eyes with desire, photorealistic emotional intimacy." }
+];
+
+
+// Para adicionar as Categorias ao array principal FIXED_PROMPTS:
+const BASICO_PROMPTS = [
+  ...DATA_CONTROLS,
+  ...DATA_POSICAO,
+  ...DATA_SENSUAL,  
+];
+
+const ROUPA_PROMPTS = [
+  ...DATA_ROUPA,
+  ...DATA_ROUPA_INTIMA,
+  ...DATA_COSPLAY
+];
+
+const ATLETA_PROMPTS = [
+  ...DATA_FITNESS,
+  ...DATA_AESTHETICS
+];
+
+const EXTRAS_PROMPTS = [
+  ...DATA_LUGAR,
+  ...DATA_YOGA_TANTRA,
+  ...DATA_ROMANCE,
+];
+
+let basico = true, roupa = true, atleta = true, extras = true; // Ativar/desativar categorias
+
+function setFixedPromptsSettings(b, r, a, e) {
+if (b) FIXED_PROMPTS.push(...BASICO_PROMPTS);
+if (r) FIXED_PROMPTS.push(...ROUPA_PROMPTS);
+if (a) FIXED_PROMPTS.push(...ATLETA_PROMPTS);
+if (e) FIXED_PROMPTS.push(...EXTRAS_PROMPTS);
+}
+
+setFixedPromptsSettings(basico, roupa, atleta, extras);
+
+/* extra prompts for Grok Imagine Plus
+[
   { id: "⚡", text: "[Ultra Mode]" },
   { id: "🌸", text: "[Anime Mode]" },
   { id: "🎉", text: "[Fun Mode]" },
@@ -25,6 +189,12 @@ const FIXED_PROMPTS = [
   { id: "🔍+", text: "Zoom in." },
   { id: "🔍-", text: "Zoom out." },
   { id: "⏱️", text: "Slow Motion." },
+  { id: "📸", 
+    text: "Transform this image into an extreme photorealistic capture of a real person, hyper-detailed live-action movie still, actual real human captured on professional cinema camera like ARRI Alexa 65, authentic 35mm film grain Kodak Vision3 stock, natural human skin with visible pores, subtle imperfections, freckles, fine wrinkles, realistic subsurface scattering, natural sweat and oil sheen, razor-sharp focus on eyes with detailed iris and catchlights, shallow depth of field 85mm prime lens cinematic bokeh, dramatic volumetric lighting motivated by practical sources, raw unfiltered photograph straight out of a Hollywood blockbuster, 8K ultra-high resolution, insane micro-details on hair strands fabrics skin texture, casual imperfect framing slight lens distortion natural exposure, no cartoon no illustration no render no plastic skin no airbrushed no idealized smooth perfection, pure optical realism as if taken with a real lens in the real world."     
+  },
+  { id: "🥰", 
+    text: "Transform this image into super kawaii chibi anime style, cute hand-drawn 2D cartoon illustration, big sparkling expressive anime eyes, huge head tiny body exaggerated proportions, vibrant cel-shading flat colors clean bold lineart, playful whimsical Studio Ghibli mixed with modern cute anime like Spy x Family or K-On, soft pastel palette glowing highlights sparkles, adorable deformed chibi character design, detailed manga-style facial expression energetic pose, no photorealism no realistic skin no pores no 3D render no live-action no human photo texture no cinematic grain, pure 2D animated screencap colorful flat shading ink outlines watercolor accents low detail stylized cute art." 
+   },
   {
     "id": "🧎‍♀️",
     "text": "On all fours, seductive arched back, looking back over shoulder."
@@ -100,13 +270,7 @@ const FIXED_PROMPTS = [
   {
     "id": "😈",
     "text": "Extremely hypersexualized female character in a bold explicit pose, arched back, legs spread or on all fours, exaggerated curves, intense seductive expression with biting lip or tongue out, glossy oiled skin, minimal clothing or torn lingerie, provocative bedroom or dark fantasy setting, dramatic rim lighting and volumetric fog, ultra-detailed anatomy and skin texture, raw erotic energy, NSFW high-impact visual like high-end adult art or provocative glamour photography."
-  },
-  { id: "📸", 
-    text: "Transform this image into an extreme photorealistic capture of a real person, hyper-detailed live-action movie still, actual real human captured on professional cinema camera like ARRI Alexa 65, authentic 35mm film grain Kodak Vision3 stock, natural human skin with visible pores, subtle imperfections, freckles, fine wrinkles, realistic subsurface scattering, natural sweat and oil sheen, razor-sharp focus on eyes with detailed iris and catchlights, shallow depth of field 85mm prime lens cinematic bokeh, dramatic volumetric lighting motivated by practical sources, raw unfiltered photograph straight out of a Hollywood blockbuster, 8K ultra-high resolution, insane micro-details on hair strands fabrics skin texture, casual imperfect framing slight lens distortion natural exposure, no cartoon no illustration no render no plastic skin no airbrushed no idealized smooth perfection, pure optical realism as if taken with a real lens in the real world."     
-  },
-  { id: "🥰", 
-    text: "Transform this image into super kawaii chibi anime style, cute hand-drawn 2D cartoon illustration, big sparkling expressive anime eyes, huge head tiny body exaggerated proportions, vibrant cel-shading flat colors clean bold lineart, playful whimsical Studio Ghibli mixed with modern cute anime like Spy x Family or K-On, soft pastel palette glowing highlights sparkles, adorable deformed chibi character design, detailed manga-style facial expression energetic pose, no photorealism no realistic skin no pores no 3D render no live-action no human photo texture no cinematic grain, pure 2D animated screencap colorful flat shading ink outlines watercolor accents low detail stylized cute art." 
-   },
+  },  
    {
     "id": "🌌",  // Sci-Fi (futurista + espaço/guerra cósmica)
     "text": "Transform this image into epic hard sci-fi style, ultra-detailed cinematic science fiction scene, advanced futuristic technology, sleek metallic surfaces, glowing neon-blue holographic interfaces, massive starships, alien architecture, atmospheric haze, dramatic rim lighting, lens flares, 8K cinematic quality, photorealistic textures, Blade Runner 2049 + The Expanse + Dune aesthetic, deep space environment or high-tech megacity, realistic materials, no cartoon."
@@ -289,10 +453,10 @@ const FIXED_PROMPTS = [
   }
 
 ];
+*/
 
-
-  /* see above for FIXED_PROMPTS extras  ,
-  
+/* see above for FIXED_PROMPTS extras  ,
+[
   {    
     "id": "💞",
     "text": "Two women in passionate embrace, one woman's hands gently cupping the other's face, both looking into each other's eyes with deep affection and desire, soft candlelight casting warm shadows on skin, intimate bedroom setting with rose petals scattered, expressions of tender love and longing, hyper-detailed facial features and skin texture, subtle blush and natural body heat, romantic sensual connection between women, photorealistic emotional intimacy."
@@ -312,16 +476,16 @@ const FIXED_PROMPTS = [
   {
     "id": "💋",
     "text": "Erotic underwater embrace, two nude bodies entwined in crystal-clear turquoise water, bubbles rising sensually, hair floating like silk, hands caressing wet skin, shafts of sunlight piercing surface creating god rays on curves, dreamlike aquatic fantasy, slow-motion fluidity, ultra-detailed water caustics and skin underwater texture, sensual mermaid-like allure, NSFW artistic nude."
-  },
-  
-  */
-
+  }
+]
+*/
 
 
 (() => {
   const STORAGE_KEY = "grok_imagine_prompts";
   const MODE_KEY = "grok_prompt_insert_mode";
   const VIDEO_CTRL_KEY = "grok_video_controls_enabled";
+  const FIXED_PROMPTS_KEY = "grok_fixed_prompts_enabled";
 
   let prompts = [];
   let currentZoom = 1;
@@ -350,7 +514,7 @@ const FIXED_PROMPTS = [
     const input = findImagineInput();
     if (input) {
       const mode = getMode();
-      input.value = mode === "replace" ? text : (input.value ? input.value + "\n" + text : text);
+      input.value = mode === "Replace" ? text : (input.value ? input.value + "\n" + text : text);
       input.dispatchEvent(new Event("input", { bubbles: true }));
     }
   };
@@ -402,6 +566,10 @@ const FIXED_PROMPTS = [
     }, "Expand/Collapse Prompts");
     toggleBtn.className = "toggle-list-btn";
 
+    // FIXED_PROMPTS
+    const fixBtn = createBtn(`📌`, () => openModalFix(), "Manage Fixed Prompts");
+
+
     const addBtn = createBtn(`+ Prompts (${prompts.length})`, () => openModal(), "Add Prompt");
     addBtn.id = "main-add-btn";
 
@@ -414,7 +582,7 @@ const FIXED_PROMPTS = [
       modeBtn.textContent = `⇄ ${next}`;
     }, "Toggle Insert Mode");
 
-    const videoBtn = createBtn("🎬 Controls", () => {
+    const videoBtn = createBtn("🎬", () => {
       chrome.storage.local.get([VIDEO_CTRL_KEY], (res) => {
         chrome.storage.local.set({ [VIDEO_CTRL_KEY]: !res[VIDEO_CTRL_KEY] }, applyVideoSettings);
       });
@@ -433,7 +601,7 @@ const FIXED_PROMPTS = [
       }
     }, "Limpar Input");
 
-    toolbar.append(addBtn, modeBtn, videoBtn, fsBtn, wControl, zoomOutBtn, zoomInBtn, resetBtn, cleanBtn, expBtn, impBtn, toggleBtn);
+    toolbar.append(addBtn, fixBtn, modeBtn, videoBtn, fsBtn, wControl, zoomOutBtn, zoomInBtn, resetBtn, cleanBtn, expBtn, impBtn, toggleBtn);
 
     const fixedBar = document.createElement("div");
     fixedBar.className = "fixed-prompts-bar";
@@ -490,6 +658,39 @@ const FIXED_PROMPTS = [
       }
       backdrop.remove();
     };
+  }
+
+  function openModalFix() {
+    // Ativar/desativar categorias FIXED_PROMPTS
+    // setFixedPromptsSettings(basico, roupa, atleta, extras);
+    const backdrop = document.createElement("div");
+    backdrop.className = "grok-modal-backdrop";
+    backdrop.innerHTML = `
+      <div class="grok-modal"></div>
+        <h3>Manage Fixed Prompts</h3>
+        <div style="display:flex; flex-direction:column; gap:10px; max-height:300px; overflow-y:auto;">
+          ${FIXED_PROMPTS.map(p => `
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:5px;">
+              <span title="${p.text}">${p.id} - ${p.text.length > 30 ? p.text.slice(0, 30) + "..." : p.text}</span>
+              <input type="checkbox" data-id="${p.id}" ${isFixedPromptEnabled(p.id) ? "checked" : ""}/>
+            </div>
+          `).join("")}
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:5px; margin-top:10px">
+          <button id="close-modal-fix">Close</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(backdrop);
+
+    backdrop.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+      checkbox.onchange = () => {
+        const id = checkbox.getAttribute("data-id");
+        toggleFixedPrompt(id);
+      };
+    });
+
+    backdrop.querySelector("#close-modal-fix").onclick = () => backdrop.remove();
   }
 
   function render(list) {
