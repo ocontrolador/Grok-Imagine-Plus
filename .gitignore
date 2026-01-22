@@ -1,5 +1,9 @@
 .contents*
 .env
+.bak
+.old
+.tmp
+tmp/*
 
 # Compiled source #
 ####################

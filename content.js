@@ -42,7 +42,7 @@ const FIXED_PROMPTS = {
   "SENSUAL": [
   { id: "🔥", text: "Enhances sensual lighting and feminine curves." },
   { id: "🍑", text: "Aesthetic focus on curves, firm and lifted silhouette, subtle skin sheen." },
-  { id: "⌛", text:  "Hourglass silhouette from side view, emphasizing waist and hip lines." },
+    { id: "⌛", text:  "Hourglass silhouette from side view, emphasizing waist and hip lines." },
   { id: "🌙", text: "Side profile lying down, exaggerated S-curve of waist to hips, moonlit glow." },
   { id: "👄", text: "Sensual expression, biting lower lip, focused on collarbones and cleavage." },
   { id: "🛁", text: "Sensual woman in a bathtub overflowing with foam, steam rising, wet hair, soft candlelight." },
@@ -51,72 +51,34 @@ const FIXED_PROMPTS = {
   { id: "🕯️", text: "Reclining on velvet sheets, chiaroscuro lighting, dramatic shadows, artistic oil painting vibe." },
   { id: "🌹", text: "Lying amid red rose petals, soft morning light, romantic and passionate mood." },
   { id: "😈", text: "Intense seductive expression, arched back, dramatic rim lighting, raw cinematic energy." }
-],
-"ROUPA": [
-  { id: "👠", text: "Provocative luxury lace lingerie, 16-inch high heels, intricate patterns, sheer textures, boudoir atmosphere." },
-  { id: "👗", text: "Elegant form-fitting dress, high side slit revealing legs, plunging neckline, silk texture." },
-  { id: "🌊", text: "Stunning beach aesthetic, elegant bikini, sun-kissed oiled skin, wet hair look." },
-  { id: "🏊‍♀️", text: "Athletic one-piece swimsuit clinging wetly to curves, emerging from turquoise water." },
-  { id: "🏃‍♀️", text: "Sporty aesthetic, tiny running shorts and cropped top, sweat-glistened skin, dynamic energy." },
-  { id: "🌸", text: "Sheer flowing sarong, translucent fabric catching the wind, draped loosely over curves." }
   ],
-  "ROUPA_INTIMA": [
-  { id: "👙", text: "Luxurious lace lingerie set, intricate floral patterns, sheer textures, garter belt details." },
-  { id: "🎀", text: "Satin bodysuit with ribbons, plunging back, soft bedroom lighting, boudoir style." },
-  { id: "👠", text: "Complete boudoir look, sheer thigh-high stockings with lace tops, elegant high heels." },
-  { id: "🥀", text: "Dark silk robe partially open, revealing delicate lace underneath, intimate atmosphere." }
-  ],
-  "COSPLAY": [
-  { id: "🦸‍♀️", text: "Female superhero, powerful pose, form-fitting spandex suit, flowing cape, city skyline." },
-  { id: "🧚‍♀️", text: "Enchanting fairy, iridescent wings, ethereal sheer dress of leaves and flowers, magical glade." },
-  { id: "🧛‍♀️", text: "Gothic vampire queen, lace corset, deep crimson lips, mysterious castle, moody red lighting." },
-  { id: "🖤", text: "Dominant aesthetic, glossy black latex catsuit, red neon accents, cyber-gothic atmosphere." },
-  { id: "🔗", text: "Artistic Shibari, delicate red silk ropes wrapped around curves, serene and vulnerable expression." },
-  { id: "🥷", text: "Seductive kunoichi (ninja) cosplay, form-fitting dark mesh armor, masked face with intense eyes, moonlight rooftop." },
-  { id: "⚔️", text: "Warrior Princess, ornate golden chestplate over sheer silk, holding a glowing sword, dramatic battlefield sunset." },
-  { id: "🛰️", text: "Galactic Pilot, unzipped futuristic flight suit, holographic interfaces reflecting on skin, starship cockpit." },
-  { id: "🐾", text: "Wild feline-inspired huntress, faux-fur accents, tribal markings, prowling pose in a jungle setting." },
-  { id: "🏛️", text: "Greek Goddess cosplay, translucent white chiton, gold leaf crown, leaning against marble pillars at twilight." }
-  ],
-  "AESTHETICS": [
-  { id: "🏙", text: "Cyberpunk city street, neon lights, rainy night, realistic" },
-  { id: "😃", text: "Studio Ghibli style landscape, lush greenery, fluffy clouds" },
-  { id: "🌌", text: "Epic hard sci-fi, advanced futuristic technology, starships, 8K cinematic quality." },
-  { id: "🌃", text: "Ultra-detailed cyberpunk, neon-drenched rainy night, gritty dystopian atmosphere, 8K." },
-  { id: "🗡️", text: "High fantasy epic style, ancient castles, dragons, magical runes, cinematic atmosphere." },
-  { id: "🌀", text: "Surrealism art style, dream-like scene, melting clocks, Salvador Dalí influence, hypnotic mood." }
-  ],
-  "FITNESS": [
-  { id: "🏋️‍♀️", text: "Athletic woman in gym pose, sports bra and high-cut shorts, defined muscles, sweat-glistened skin." },
-  { id: "🏃‍♀️", text: "Runner mid-sprint at golden hour, toned legs, wind-swept hair, dynamic motion blur." },
-  { id: "🤸‍♀️", text: "Gymnast in split leap pose, elegant bodysuit, soft studio lighting, focused expression." },
-  { id: "💪", text: "Female bodybuilder flexing, oiled skin under stage lights, powerful sensual strength, 8K." },
-  { id: "🧗‍♀️", text: "Rock climber on boulder wall, body stretched taut, back muscles defined, sunset cliff setting." },
-  { id: "🏊‍♀️", text: "Swimmer emerging from pool, water droplets on toned body, athletic swimsuit, blue water glow." },
-  ],
-  "LUGAR": [
-  { id: "🛁", text: "Luxurious clawfoot bathtub, thick white foam bubbles, steam rising, warm candlelight." },
-  { id: "🛏️", text: "Luxurious bedroom, silk sheets, soft morning light through sheer curtains, intimate mood." },
-  { id: "🌿", text: "Enchanted tropical forest at dawn, soft mist, golden rays piercing through leaves." },
-  { id: "🕯️", text: "Dimly lit room, multiple candles, dramatic shadows (chiaroscuro), velvet textures." },
-  { id: "🌃", text: "Modern balcony overlooking a neon-drenched city at night, rainy atmosphere, blue glow." }
-  ],
-  "YOGA_TANTRA": [
-  { id: "🕉️", text: "Sacred tantric connection, seated embrace, soul-gazing, golden energy aura, peaceful mood." },
-  { id: "🧘‍♀️", text: "Graceful yoga flow, Cat-Cow pose, arched back, golden hour sunlight, serene studio." },
-  { id: "🐍", text: "Cobra Pose (Bhujangasana), chest lifted, back arched gracefully, peaceful yet charged atmosphere." },
-  { id: "🕊️", text: "Pigeon Pose, deep hip-opening stretch, elegant torso, morning light, calm expression." },
-  { id: "🧘", text: "Sensual lotus meditation, bare torso with oil sheen, candlelight, inner bliss." },
-  { id: "💫", text: "Divine tantric harmony, bodies aligned in rhythm of breath, cosmic chakra glow, visionary art." }
-  ],
-  "ROMANCE": [
-  { id: "💋", text: "Intimate close-up of a passionate kiss, soft lips pressed together, warm flushed cheeks." },
-  { id: "👩‍❤️‍💋‍👨", text: "Man and woman in close embrace, deep sensual kiss, candlelight, intimate loving connection." },
-  { id: "👩‍❤️‍👩", text: "Passionate lesbian couple, deep kiss, soft candlelight, intense longing and bliss." },
-  { id: "🫂", text: "Mixed couple embrace, skin-to-skin contact, sunset glow, profound love and desire." },
-  { id: "💞", text: "Two women in affectionate embrace, looking into eyes with desire, photorealistic emotional intimacy." }
-  ]
 };
+
+async function carregarEIncorporarPrompts() {
+  try {
+    // Busca o caminho interno da extensão
+    const urlArquivo = chrome.runtime.getURL('extra_prompts.json');
+    const resposta = await fetch(urlArquivo);
+    
+    if (!resposta.ok) throw new Error("Falha ao carregar arquivo");
+
+    const EXTRA_PROMPTS = await resposta.json();
+
+    // Incorpora ao seu objeto fixo
+    Object.assign(FIXED_PROMPTS, EXTRA_PROMPTS);
+
+    console.log("Prompts carregados com sucesso!", FIXED_PROMPTS);
+    
+  } catch (erro) {
+    console.error("Erro ao carregar o JSON:", erro);
+  }
+}
+
+// Executa a função
+carregarEIncorporarPrompts();
+
+// Incluir todos os EXTRA_PROMPTS em FIXED_PROMPTS
+// Object.assign(FIXED_PROMPTS, EXTRA_PROMPTS);
 
 const FIXED_PROMPTS_KEY = "grok_fixed_prompts_enabled";
 let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
@@ -126,6 +88,7 @@ let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
   const MODE_KEY = "grok_prompt_insert_mode";
   const VIDEO_CTRL_KEY = "grok_video_controls_enabled";
   const FIXED_PROMPTS_KEY = "grok_fixed_prompts_enabled";
+  const COLLAPSED_KEY = "grok_prompts_collapsed";
 
   let prompts = [];
   let currentZoom = 1;
@@ -137,8 +100,14 @@ let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
   const getMode = () => localStorage.getItem(MODE_KEY) || "replace";
   const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(prompts));
 
-  const load = () => {
+  const getCollapsed = () => localStorage.getItem(COLLAPSED_KEY) === "true";
+  const setCollapsed = (isCollapsed) => localStorage.setItem(COLLAPSED_KEY, isCollapsed);
+
+  const load = async () => {
   try {
+    // Carrega o JSON extra primeiro
+    await carregarEIncorporarPrompts();
+
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
     prompts = Array.isArray(saved) && saved.length > 0 ? saved : [...DEFAULT_PROMPTS];
     
@@ -195,8 +164,15 @@ let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
   }
 
   function createManager() {
-    const hr = document.querySelector("#imagine-post-page-content");
-    if (!hr || document.querySelector("#grok-prompt-manager")) return;
+    // 1. Tenta localizar o novo container alvo (h-fit w-full pb-5)
+    // Usamos um seletor que combine as classes para precisão
+    const targetContainer = document.querySelector('div.h-fit.w-full.pb-5');
+  
+    // Caso não ache o container novo, mantemos o fallback para o original ou paramos
+    if (!targetContainer || document.querySelector("#grok-prompt-manager")) return;
+
+    // const hr = document.querySelector("#imagine-post-page-content");
+    // if (!hr || document.querySelector("#grok-prompt-manager")) return;
 
     const root = document.createElement("div");
     root.id = "grok-prompt-manager";
@@ -204,13 +180,17 @@ let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
     const toolbar = document.createElement("div");
     toolbar.className = "prompt-toolbar";
 
-    const toggleBtn = createBtn("▼", () => {
+    // --- LÓGICA DE COLLAPSE ATUALIZADA ---
+    const currentlyCollapsed = getCollapsed(); // Lê o estado salvo
+
+    const toggleBtn = createBtn(currentlyCollapsed ? "▼" : "▲", () => {
       const list = document.querySelector(".prompt-list");
       if (list) {
-        const isCollapsed = list.classList.toggle("collapsed");
-        toggleBtn.textContent = isCollapsed ? "▼" : "▲";
+        const isNowCollapsed = list.classList.toggle("collapsed");
+        toggleBtn.textContent = isNowCollapsed ? "▼" : "▲";
+        setCollapsed(isNowCollapsed); // Guarda o novo estado
       }
-    }, "Expand/Collapse Prompts");
+    });
     toggleBtn.className = "toggle-list-btn";
 
     // FIXED_PROMPTS
@@ -254,16 +234,22 @@ let enabledCategories = ["FIXED", "CONTROLS", "POSICAO", "SENSUAL"]; // Padrão
     fixedBar.className = "fixed-prompts-bar";
     fixedBar.style.cssText = "display:flex; flex-wrap:wrap; gap:4px; padding:5px; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.05);";
     
+// Pegamos todas as chaves para saber o índice de cada categoria
+const allCategoryKeys = Object.keys(FIXED_PROMPTS);
+
 enabledCategories.forEach(catName => {
   const items = FIXED_PROMPTS[catName];
   if (items) {
+    // Descobrimos o índice (0, 1, 2...) e usamos o resto da divisão por 10 (% 10)
+    const catIndex = allCategoryKeys.indexOf(catName) % 10;
+    
     items.forEach(p => {
       const btn = createBtn(p.id, () => insertTextToInput(p.text), p.text);
       btn.style.fontSize = "16px";
       btn.style.padding = "2px 4px";
       
-      // Adiciona o atributo de categoria para o CSS encontrar
-      btn.setAttribute("data-cat", catName); 
+      // Agora usamos um atributo de estilo numérico em vez do nome
+      btn.setAttribute("data-style-idx", catIndex); 
       
       fixedBar.appendChild(btn);
     });
@@ -271,10 +257,12 @@ enabledCategories.forEach(catName => {
 });
 
     const list = document.createElement("div");
-    list.className = "prompt-list collapsed";
+    // Aplica o estado inicial com base no que foi recuperado do storage
+    list.className = `prompt-list ${currentlyCollapsed ? "collapsed" : ""}`;
 
     root.append(toolbar, fixedBar, list);
-    hr.insertAdjacentElement("afterend", root);
+    targetContainer.insertAdjacentElement("afterend", root);
+    //hr.insertAdjacentElement("afterend", root);
     render(list);
   }
 
@@ -321,13 +309,18 @@ function openModalFix() {
   // Estilo garantindo que apareça sobre tudo
   modal.style = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:sans-serif;";
   
-  // Cria os checkboxes baseados nas SUAS chaves (FIXED, CONTROLS, POSICAO, etc)
-  const optionsHtml = Object.keys(FIXED_PROMPTS).map(cat => `
-    <div style="margin: 6px 0; display: flex; align-items: center; gap: 10px; color: white;">
-      <input type="checkbox" id="cat-${cat}" ${enabledCategories.includes(cat) ? 'checked' : ''} value="${cat}" style="width:32px; height:16px; cursor:pointer;">
-      <label for="cat-${cat}" data-cat="${cat}" style="cursor:pointer; padding: 0 5px; font-size:14px; user-select:none;">${cat}</label>
-    </div>
-  `).join('');
+  // Cria os checkboxes baseados nas SUAS chaves KEYs
+  const allCategoryKeys = Object.keys(FIXED_PROMPTS);
+
+  const optionsHtml = allCategoryKeys.map((cat, index) => {
+    const styleIdx = index % 10;
+    return `
+      <div style="margin: 6px 0; display: flex; align-items: center; gap: 10px; color: white;">
+        <input type="checkbox" id="cat-${cat}" ${enabledCategories.includes(cat) ? 'checked' : ''} value="${cat}" style="width:32px; height:16px; cursor:pointer;">
+        <label for="cat-${cat}" data-style-idx="${styleIdx}" style="cursor:pointer; padding: 2px 8px; font-size:14px; user-select:none; border-radius:4px;">${cat}</label>
+      </div>
+    `;
+  }).join('');
 
   modal.innerHTML = `
     <div style="background: #1e1e1e; padding: 25px; border-radius: 16px; border: 1px solid #333; min-width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -514,6 +507,13 @@ function openModalFix() {
   }, 2000);
   const observer = new MutationObserver(() => {
     controlsAllVideos();    
+    // Selecionando o elemento pelo atributo aria-label
+    const notificationsSection = document.querySelector('section[aria-label="Notifications alt+T"]');
+
+    // Verificando se o elemento existe antes de limpar o conteúdo
+    if (notificationsSection) {
+      //notificationsSection.innerHTML = '';
+    } 
   });
   observer.observe(document.body, { childList: true, subtree: true });
 })();

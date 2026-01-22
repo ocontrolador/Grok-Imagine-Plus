@@ -17,6 +17,16 @@
   }
 }
 
+html {
+  overflow-y: scroll !important;
+}
+
+
+.\@container\/mainview {
+  overflow-y: scroll !important;
+}
+
+
 #grok-prompt-manager {
   border: 1px solid var(--border);
   background: var(--bg);
@@ -258,61 +268,18 @@ video, img {
 
 /* Cores por Categoria para os botões fixos */
 
-[data-cat="FIXED"] {
-    background-color: #4b0082 !important; /* Indigo */
-    color: white !important;
-}
+/* Estilos Genéricos por Posição (0 a 9) */
 
-[data-cat="CONTROLS"] {
-    background-color: #2f4f4f !important; /* Dark Slate Gray */
-    color: white !important;
-}
-
-[data-cat="POSICAO"] {
-    background-color: #1ba0c9 !important;
-    color: white !important;
-}
-
-[data-cat="SENSUAL"] {
-    background-color: #b22222 !important; /* Firebrick (Vermelho) */
-    color: white !important;
-}
-
-[data-cat="ROUPA"],
-[data-cat="ROUPA_INTIMA"] {
-    background-color: #c71585 !important; /* Medium Violet Red */
-    color: white !important;
-}
-
-[data-cat="COSPLAY"] {
-    background-color: #006400 !important; /* Dark Green */
-    color: white !important;
-}
-
-[data-cat="AESTHETICS"] {
-    background-color: #4682b4 !important; /* Steel Blue */
-    color: white !important;
-}
-
-[data-cat="FITNESS"] {
-    background-color: #ff8c00 !important; /* Dark Orange */
-    color: white !important;
-}
-
-[data-cat="YOGA_TANTRA"] {
-    background-color: #9370db !important; /* Medium Purple */
-    color: white !important;
-}
-
-[data-cat="LUGAR"] {
-    background-color: #20b2aa !important; /* Light Sea Green */
-    color: white !important;
-}
-
-[data-cat="ROMANCE"] {
-    background-color: #ff69b4 !important; /* Hot Pink */
-    color: white !important;
-}
+[data-style-idx="0"] { background-color: #4b0082 !important; color: white !important; } /* Indigo */
+[data-style-idx="1"] { background-color: #2f4f4f !important; color: white !important; } /* Dark Slate Gray */
+[data-style-idx="2"] { background-color: #1ba0c9 !important; color: white !important; } /* Blue */
+[data-style-idx="3"] { background-color: #b22222 !important; color: white !important; } /* Firebrick */
+[data-style-idx="4"] { background-color: #c71585 !important; color: white !important; } /* Medium Violet Red */
+[data-style-idx="5"] { background-color: #2e8b57 !important; color: white !important; } /* Sea Green */
+[data-style-idx="6"] { background-color: #d2691e !important; color: white !important; } /* Chocolate */
+[data-style-idx="7"] { background-color: #4682b4 !important; color: white !important; } /* Steel Blue */
+[data-style-idx="8"] { background-color: #8b0000 !important; color: white !important; } /* Dark Red */
+[data-style-idx="9"] { background-color: #556b2f !important; color: white !important; } /* Dark Olive Green */
 
 /* Efeito de hover para destacar a cor original */
 [data-cat]:hover {

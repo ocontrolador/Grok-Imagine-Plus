@@ -1,12 +1,16 @@
 {
    "manifest_version": 3,
    "name": "Grok Imagine Plus",
-   "version": "1.9.5",
+   "version": "1.10.2",
    "permissions": ["storage"],
    "content_scripts": [ {
       "css": [ "style.css" ],
       "js": [ "content.js" ],
       "matches": [ "https://grok.com/*" ]
+   } ],
+   "web_accessible_resources": [ {
+      "resources": ["extra_prompts.json"],
+      "matches": ["https://grok.com/*"]
    } ],
    "icons": { "128": "icons/icon128.png" }
 }

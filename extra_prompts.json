@@ -1,0 +1,66 @@
+{
+  "ROUPA": [
+  { "id": "👠", "text": "Provocative luxury lace lingerie, 16-inch high heels, intricate patterns, sheer textures, boudoir atmosphere." },
+  { "id": "👗", "text": "Elegant form-fitting dress, high side slit revealing legs, plunging neckline, silk texture." },
+  { "id": "🌊", "text": "Stunning beach aesthetic, elegant bikini, sun-kissed oiled skin, wet hair look." },
+  { "id": "🏊‍♀️", "text": "Athletic one-piece swimsuit clinging wetly to curves, emerging from turquoise water." },
+  { "id": "🏃‍♀️", "text": "Sporty aesthetic, tiny running shorts and cropped top, sweat-glistened skin, dynamic energy." },
+  { "id": "🌸", "text": "Sheer flowing sarong, translucent fabric catching the wind, draped loosely over curves." }
+  ],
+  "ROUPA_INTIMA": [
+  { "id": "👙", "text": "Luxurious lace lingerie set, intricate floral patterns, sheer textures, garter belt details." },
+  { "id": "🎀", "text": "Satin bodysuit with ribbons, plunging back, soft bedroom lighting, boudoir style." },
+  { "id": "👠", "text": "Complete boudoir look, sheer thigh-high stockings with lace tops, elegant high heels." },
+  { "id": "🥀", "text": "Dark silk robe partially open, revealing delicate lace underneath, intimate atmosphere." }
+  ],
+  "COSPLAY": [
+  { "id": "🦸‍♀️", "text": "Female superhero, powerful pose, form-fitting spandex suit, flowing cape, city skyline." },
+  { "id": "🧚‍♀️", "text": "Enchanting fairy, iridescent wings, ethereal sheer dress of leaves and flowers, magical glade." },
+  { "id": "🧛‍♀️", "text": "Gothic vampire queen, lace corset, deep crimson lips, mysterious castle, moody red lighting." },
+  { "id": "🖤", "text": "Dominant aesthetic, glossy black latex catsuit, red neon accents, cyber-gothic atmosphere." },
+  { "id": "🔗", "text": "Artistic Shibari, delicate red silk ropes wrapped around curves, serene and vulnerable expression." },
+  { "id": "🥷", "text": "Seductive kunoichi (ninja) cosplay, form-fitting dark mesh armor, masked face with intense eyes, moonlight rooftop." },
+  { "id": "⚔️", "text": "Warrior Princess, ornate golden chestplate over sheer silk, holding a glowing sword, dramatic battlefield sunset." },
+  { "id": "🛰️", "text": "Galactic Pilot, unzipped futuristic flight suit, holographic interfaces reflecting on skin, starship cockpit." },
+  { "id": "🐾", "text": "Wild feline-inspired huntress, faux-fur accents, tribal markings, prowling pose in a jungle setting." },
+  { "id": "🏛️", "text": "Greek Goddess cosplay, translucent white chiton, gold leaf crown, leaning against marble pillars at twilight." }
+  ],
+  "AESTHETICS": [
+  { "id": "🏙", "text": "Cyberpunk city street, neon lights, rainy night, realistic" },
+  { "id": "😃", "text": "Studio Ghibli style landscape, lush greenery, fluffy clouds" },
+  { "id": "🌌", "text": "Epic hard sci-fi, advanced futuristic technology, starships, 8K cinematic quality." },
+  { "id": "🌃", "text": "Ultra-detailed cyberpunk, neon-drenched rainy night, gritty dystopian atmosphere, 8K." },
+  { "id": "🗡️", "text": "High fantasy epic style, ancient castles, dragons, magical runes, cinematic atmosphere." },
+  { "id": "🌀", "text": "Surrealism art style, dream-like scene, melting clocks, Salvador Dalí influence, hypnotic mood." }
+  ],
+  "FITNESS": [
+  { "id": "🏋️‍♀️", "text": "Athletic woman in gym pose, sports bra and high-cut shorts, defined muscles, sweat-glistened skin." },
+  { "id": "🏃‍♀️", "text": "Runner mid-sprint at golden hour, toned legs, wind-swept hair, dynamic motion blur." },
+  { "id": "🤸‍♀️", "text": "Gymnast in split leap pose, elegant bodysuit, soft studio lighting, focused expression." },
+  { "id": "💪", "text": "Female bodybuilder flexing, oiled skin under stage lights, powerful sensual strength, 8K." },
+  { "id": "🧗‍♀️", "text": "Rock climber on boulder wall, body stretched taut, back muscles defined, sunset cliff setting." },
+  { "id": "🏊‍♀️", "text": "Swimmer emerging from pool, water droplets on toned body, athletic swimsuit, blue water glow." }
+  ],
+  "LUGAR": [
+  { "id": "🛁", "text": "Luxurious clawfoot bathtub, thick white foam bubbles, steam rising, warm candlelight." },
+  { "id": "🛏️", "text": "Luxurious bedroom, silk sheets, soft morning light through sheer curtains, intimate mood." },
+  { "id": "🌿", "text": "Enchanted tropical forest at dawn, soft mist, golden rays piercing through leaves." },
+  { "id": "🕯️", "text": "Dimly lit room, multiple candles, dramatic shadows (chiaroscuro), velvet textures." },
+  { "id": "🌃", "text": "Modern balcony overlooking a neon-drenched city at night, rainy atmosphere, blue glow." }
+  ],
+  "YOGA_TANTRA": [
+  { "id": "🕉️", "text": "Sacred tantric connection, seated embrace, soul-gazing, golden energy aura, peaceful mood." },
+  { "id": "🧘‍♀️", "text": "Graceful yoga flow, Cat-Cow pose, arched back, golden hour sunlight, serene studio." },
+  { "id": "🐍", "text": "Cobra Pose (Bhujangasana), chest lifted, back arched gracefully, peaceful yet charged atmosphere." },
+  { "id": "🕊️", "text": "Pigeon Pose, deep hip-opening stretch, elegant torso, morning light, calm expression." },
+  { "id": "🧘", "text": "Sensual lotus meditation, bare torso with oil sheen, candlelight, inner bliss." },
+  { "id": "💫", "text": "Divine tantric harmony, bodies aligned in rhythm of breath, cosmic chakra glow, visionary art." }
+  ],
+  "ROMANCE": [
+  { "id": "💋", "text": "Intimate close-up of a passionate kiss, soft lips pressed together, warm flushed cheeks." },
+  { "id": "👩‍❤️‍💋‍👨", "text": "Man and woman in close embrace, deep sensual kiss, candlelight, intimate loving connection." },
+  { "id": "👩‍❤️‍👩", "text": "Passionate lesbian couple, deep kiss, soft candlelight, intense longing and bliss." },
+  { "id": "🫂", "text": "Mixed couple embrace, skin-to-skin contact, sunset glow, profound love and desire." },
+  { "id": "💞", "text": "Two women in affectionate embrace, looking into eyes with desire, photorealistic emotional intimacy." }
+  ]
+}
